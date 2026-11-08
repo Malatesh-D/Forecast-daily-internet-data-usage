@@ -1,0 +1,44 @@
+{
+    "numerical_features": [
+        "video_streaming_hours",
+        "downloading_gb",
+        "video_calling_hours",
+        "online_gaming_hours",
+        "social_media_hours",
+        "smart_tv_usage_gb",
+        "laptop_usage_gb",
+        "mobile_usage_gb",
+        "connected_devices_count",
+        "previous_day_usage",
+        "rolling_7_day_average"
+    ],
+    "categorical_features": [
+        "is_weekend"
+    ],
+    "all_feature_names": [
+        "video_streaming_hours",
+        "downloading_gb",
+        "video_calling_hours",
+        "online_gaming_hours",
+        "social_media_hours",
+        "smart_tv_usage_gb",
+        "laptop_usage_gb",
+        "mobile_usage_gb",
+        "connected_devices_count",
+        "previous_day_usage",
+        "rolling_7_day_average",
+        "is_weekend"
+    ],
+    "total_feature_count": 12,
+    "target": "total_data_usage_gb",
+    "train_size": 1760,
+    "test_size": 440,
+    "train_date_range": [
+        "2020-01-01",
+        "2024-10-25"
+    ],
+    "test_date_range": [
+        "2024-10-26",
+        "2026-01-08"
+    ]
+}

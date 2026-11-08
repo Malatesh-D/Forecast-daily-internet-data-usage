@@ -1,0 +1,131 @@
+{
+    "best_model_name": "Linear Regression",
+    "models": {
+        "Linear Regression": {
+            "train_metrics": {
+                "MAE": 0.3989,
+                "MSE": 0.2484,
+                "RMSE": 0.4984,
+                "R2": 0.997,
+                "MAPE": 3.05
+            },
+            "test_metrics": {
+                "MAE": 0.4073,
+                "MSE": 0.2722,
+                "RMSE": 0.5218,
+                "R2": 0.9967,
+                "MAPE": 2.55
+            },
+            "residual_stats": {
+                "std": 0.5179,
+                "q05": -0.7733,
+                "q25": -0.2816,
+                "q50": 0.0543,
+                "q75": 0.3714,
+                "q95": 0.9634
+            },
+            "file": "linear_regression.pkl"
+        },
+        "Decision Tree": {
+            "train_metrics": {
+                "MAE": 0.7723,
+                "MSE": 1.0867,
+                "RMSE": 1.0425,
+                "R2": 0.987,
+                "MAPE": 5.18
+            },
+            "test_metrics": {
+                "MAE": 1.07,
+                "MSE": 2.3732,
+                "RMSE": 1.5405,
+                "R2": 0.9713,
+                "MAPE": 5.82
+            },
+            "residual_stats": {
+                "std": 1.5152,
+                "q05": -1.7628,
+                "q25": -0.5656,
+                "q50": 0.1843,
+                "q75": 1.0438,
+                "q95": 2.4317
+            },
+            "file": "decision_tree.pkl"
+        },
+        "Random Forest": {
+            "train_metrics": {
+                "MAE": 0.3201,
+                "MSE": 0.3017,
+                "RMSE": 0.5493,
+                "R2": 0.9964,
+                "MAPE": 2.1
+            },
+            "test_metrics": {
+                "MAE": 0.7455,
+                "MSE": 1.8838,
+                "RMSE": 1.3725,
+                "R2": 0.9772,
+                "MAPE": 3.63
+            },
+            "residual_stats": {
+                "std": 1.3269,
+                "q05": -0.8572,
+                "q25": -0.3257,
+                "q50": 0.1006,
+                "q75": 0.7342,
+                "q95": 1.8723
+            },
+            "file": "random_forest.pkl"
+        },
+        "Gradient Boosting": {
+            "train_metrics": {
+                "MAE": 0.2351,
+                "MSE": 0.0868,
+                "RMSE": 0.2946,
+                "R2": 0.999,
+                "MAPE": 1.79
+            },
+            "test_metrics": {
+                "MAE": 0.6215,
+                "MSE": 1.0895,
+                "RMSE": 1.0438,
+                "R2": 0.9868,
+                "MAPE": 3.3
+            },
+            "residual_stats": {
+                "std": 1.029,
+                "q05": -0.9236,
+                "q25": -0.3798,
+                "q50": 0.0438,
+                "q75": 0.5237,
+                "q95": 1.4406
+            },
+            "file": "gradient_boosting.pkl"
+        },
+        "XGBoost": {
+            "train_metrics": {
+                "MAE": 0.2947,
+                "MSE": 0.1375,
+                "RMSE": 0.3709,
+                "R2": 0.9984,
+                "MAPE": 2.26
+            },
+            "test_metrics": {
+                "MAE": 0.6707,
+                "MSE": 1.1667,
+                "RMSE": 1.0802,
+                "R2": 0.9859,
+                "MAPE": 3.45
+            },
+            "residual_stats": {
+                "std": 1.0508,
+                "q05": -0.8441,
+                "q25": -0.347,
+                "q50": 0.0817,
+                "q75": 0.6434,
+                "q95": 1.7194
+            },
+            "file": "xgboost.pkl"
+        }
+    },
+    "evaluation_criteria": "Lowest Test RMSE on chronological holdout set"
+}
