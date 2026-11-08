@@ -34,5 +34,9 @@ venv.bak/
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints
 
-# pytest
-.pytest_cache/
+# Temporary CSV copies at root
+/*.csv
+
+# SQLite locks
+*.db-journal
+
