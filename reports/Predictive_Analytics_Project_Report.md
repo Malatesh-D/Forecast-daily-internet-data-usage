@@ -161,3 +161,27 @@ $$\text{Lower Bound}_{t+h} = \hat{y}_{t+h} + q_{05} \cdot \sqrt{h}, \quad \text{
 ### Appendix C: Anomaly Detection Boundaries
 - **IQR Boundary:** $\text{Upper Cutoff} = Q_3 + 1.5 \times \text{IQR} = 30.04\text{ GB}$.
 - **Isolation Forest:** Contamination rate $\alpha = 0.03$ across volume, downloads, streaming, and device density.
+
+### Appendix D: Application Runtime Interface Walkthrough
+The screenshots below display the live running NetUsage Analytics application (pure-white executive interface), captured directly from Chrome WebDriver during runtime execution:
+
+1. **Executive Dashboard (`dashboard_runtime.png`):**
+   Displays real-time KPIs (7-Day Forecast Sum, Daily Mean, Projected Month Total, Risk Indicator), monthly quota progress bar, and the 7-day forecast bridge chart.
+   ![Executive Dashboard](../assets/screenshots/dashboard_runtime.png)
+
+2. **Usage Forecast Engine (`usage_forecast_runtime.png`):**
+   Interactive multi-horizon recursive forecasting with empirical 90% prediction intervals, quota exhaustion risk metrics, and "What-If" scenario simulation sliders.
+   ![Usage Forecast Engine](../assets/screenshots/usage_forecast_runtime.png)
+
+3. **Behavioral Anomaly Detection (`anomaly_detection_runtime.png`):**
+   Dual-engine outlier detection (Isolation Forest with $\alpha=0.03$ and IQR $1.5\times$ threshold) highlighting sudden volume surges and diagnostic driver attribution.
+   ![Anomaly Detection](../assets/screenshots/anomaly_detection_runtime.png)
+
+4. **Model Performance & Benchmarking (`model_benchmarks_runtime.png`):**
+   Displays the model leaderboard (RMSE, MAE, $R^2$), benchmark horizontal comparisons, and tree-derived feature importance rankings.
+   ![Model Benchmarks](../assets/screenshots/model_benchmarks_runtime.png)
+
+5. **Daily Usage Recording Form (`record_usage_runtime.png`):**
+   Allows manual logging of new day observations with active input validation, auto-calculating connected devices and displaying real-time device share distribution.
+   ![Record Usage Form](../assets/screenshots/record_usage_runtime.png)
+
