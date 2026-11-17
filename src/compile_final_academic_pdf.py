@@ -301,25 +301,25 @@ def compile_academic_pdf():
     story.append(Paragraph(app_text, body_style))
     story.append(Spacer(1, 6))
 
-    # APPENDIX D — RUNTIME APPLICATION SCREENSHOTS
+    # APPENDIX D — RUNTIME CODE & TERMINAL OUTPUT SCREENSHOTS
     story.append(PageBreak())
-    story.append(Paragraph("Appendix D: Runtime Application Interface Walkthrough", h1_style))
+    story.append(Paragraph("Appendix D: Runtime Code & Terminal Execution Output Screenshots", h1_style))
     story.append(Paragraph(
-        "Below are authentic runtime output screenshots captured from the live NetUsage Analytics Streamlit application "
-        "running on Python 3.13 and Scikit-Learn. The pure-white interface provides an executive overview, multi-day forecasting, "
-        "anomaly detection, and manual logging with input validation.",
+        "Below are authentic terminal and Python console runtime execution outputs captured directly from PowerShell "
+        "running Python 3.13, Scikit-Learn, and Pytest. These verify model training benchmarks, holdout inference logs, "
+        "recursive multi-horizon forecasting, anomaly diagnostics, and automated unit test validation.",
         body_style
     ))
     story.append(Spacer(1, 4))
 
-    # Screenshot 1 & 2 Table
-    dash_img = os.path.join(SCREENSHOTS_DIR, "dashboard_runtime.png")
-    fore_img = os.path.join(SCREENSHOTS_DIR, "usage_forecast_runtime.png")
-    if os.path.exists(dash_img) and os.path.exists(fore_img):
+    # Row 1: Model Training & Test Predictions
+    t_train = os.path.join(SCREENSHOTS_DIR, "terminal_model_training.png")
+    t_eval = os.path.join(SCREENSHOTS_DIR, "terminal_predictions_eval.png")
+    if os.path.exists(t_train) and os.path.exists(t_eval):
         t_shot1 = Table([
-            [Image(dash_img, width=3.4*inch, height=2.1*inch), Image(fore_img, width=3.4*inch, height=2.1*inch)],
-            [Paragraph("<b>Figure A1:</b> Executive Dashboard with Live KPIs & Forecast Bridge", caption_style),
-             Paragraph("<b>Figure A2:</b> 7-Day Recursive Forecast Engine & Prediction Intervals", caption_style)]
+            [Image(t_train, width=3.4*inch, height=2.2*inch), Image(t_eval, width=3.4*inch, height=2.2*inch)],
+            [Paragraph("<b>Figure A1:</b> Model Training, Cross-Model Benchmark Leaderboard & Champion Selection", caption_style),
+             Paragraph("<b>Figure A2:</b> Chronological Holdout Inference Sample Log & Residual Diagnostics", caption_style)]
         ], colWidths=[3.5*inch, 3.5*inch])
         t_shot1.setStyle(TableStyle([
             ("ALIGN", (0, 0), (-1, -1), "CENTER"),
@@ -329,14 +329,14 @@ def compile_academic_pdf():
         story.append(t_shot1)
         story.append(Spacer(1, 6))
 
-    # Screenshot 3 & 4 Table
-    anom_img = os.path.join(SCREENSHOTS_DIR, "anomaly_detection_runtime.png")
-    bench_img = os.path.join(SCREENSHOTS_DIR, "model_benchmarks_runtime.png")
-    if os.path.exists(anom_img) and os.path.exists(bench_img):
+    # Row 2: Recursive Forecast & Anomaly Detection
+    t_fore = os.path.join(SCREENSHOTS_DIR, "terminal_recursive_forecast.png")
+    t_anom = os.path.join(SCREENSHOTS_DIR, "terminal_anomaly_detection.png")
+    if os.path.exists(t_fore) and os.path.exists(t_anom):
         t_shot2 = Table([
-            [Image(anom_img, width=3.4*inch, height=2.1*inch), Image(bench_img, width=3.4*inch, height=2.1*inch)],
-            [Paragraph("<b>Figure A3:</b> Dual Anomaly Detection Timeline & Outlier Flags", caption_style),
-             Paragraph("<b>Figure A4:</b> Model Leaderboard, RMSE Benchmarks & Feature Weights", caption_style)]
+            [Image(t_fore, width=3.4*inch, height=2.2*inch), Image(t_anom, width=3.4*inch, height=2.2*inch)],
+            [Paragraph("<b>Figure A3:</b> Recursive 7-Day Forecasting Engine Schedule with 90% Prediction Intervals", caption_style),
+             Paragraph("<b>Figure A4:</b> Dual Isolation Forest & IQR Anomaly Detection Outlier Log", caption_style)]
         ], colWidths=[3.5*inch, 3.5*inch])
         t_shot2.setStyle(TableStyle([
             ("ALIGN", (0, 0), (-1, -1), "CENTER"),
@@ -346,13 +346,15 @@ def compile_academic_pdf():
         story.append(t_shot2)
         story.append(Spacer(1, 6))
 
-    # Screenshot 5: Record Usage
-    rec_img = os.path.join(SCREENSHOTS_DIR, "record_usage_runtime.png")
-    if os.path.exists(rec_img):
+    # Row 3: Data Inspection & Pytest
+    t_data = os.path.join(SCREENSHOTS_DIR, "terminal_data_summary.png")
+    t_test = os.path.join(SCREENSHOTS_DIR, "terminal_pytest_passed.png")
+    if os.path.exists(t_data) and os.path.exists(t_test):
         t_shot3 = Table([
-            [Image(rec_img, width=5.2*inch, height=2.4*inch)],
-            [Paragraph("<b>Figure A5:</b> Daily Data Recording Form with Input Validation & Real-time Pie Distribution", caption_style)]
-        ], colWidths=[7.0*inch])
+            [Image(t_data, width=3.4*inch, height=2.2*inch), Image(t_test, width=3.4*inch, height=2.2*inch)],
+            [Paragraph("<b>Figure A5:</b> Data Preprocessing, Feature Types & Descriptive Statistics", caption_style),
+             Paragraph("<b>Figure A6:</b> Automated Pytest Suite Execution (7/7 Unit Tests Passed)", caption_style)]
+        ], colWidths=[3.5*inch, 3.5*inch])
         t_shot3.setStyle(TableStyle([
             ("ALIGN", (0, 0), (-1, -1), "CENTER"),
             ("BOTTOMPADDING", (0, 0), (-1, -1), 2),

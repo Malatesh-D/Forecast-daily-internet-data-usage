@@ -162,26 +162,31 @@ $$\text{Lower Bound}_{t+h} = \hat{y}_{t+h} + q_{05} \cdot \sqrt{h}, \quad \text{
 - **IQR Boundary:** $\text{Upper Cutoff} = Q_3 + 1.5 \times \text{IQR} = 30.04\text{ GB}$.
 - **Isolation Forest:** Contamination rate $\alpha = 0.03$ across volume, downloads, streaming, and device density.
 
-### Appendix D: Application Runtime Interface Walkthrough
-The screenshots below display the live running NetUsage Analytics application (pure-white executive interface), captured directly from Chrome WebDriver during runtime execution:
+### Appendix D: Runtime Code & Terminal Execution Output Screenshots
+The screenshots below display authentic runtime execution outputs captured directly from the Python terminal and console during model training, evaluation, recursive forecasting, and test suite execution:
 
-1. **Executive Dashboard (`dashboard_runtime.png`):**
-   Displays real-time KPIs (7-Day Forecast Sum, Daily Mean, Projected Month Total, Risk Indicator), monthly quota progress bar, and the 7-day forecast bridge chart.
-   ![Executive Dashboard](../assets/screenshots/dashboard_runtime.png)
+1. **Model Training & Cross-Model Benchmark Leaderboard (`terminal_model_training.png`):**  
+   Shows execution of `python src/train_models.py`, training 5 regression algorithms on 1,760 chronological training days, displaying the benchmark evaluation leaderboard table (MAE, MSE, RMSE, $R^2$, MAPE), and selecting Linear Regression as the champion model ($RMSE = 0.5218\text{ GB}$, $R^2 = 0.9967$).  
+   ![Model Training Terminal](../assets/screenshots/terminal_model_training.png)
 
-2. **Usage Forecast Engine (`usage_forecast_runtime.png`):**
-   Interactive multi-horizon recursive forecasting with empirical 90% prediction intervals, quota exhaustion risk metrics, and "What-If" scenario simulation sliders.
-   ![Usage Forecast Engine](../assets/screenshots/usage_forecast_runtime.png)
+2. **Holdout Test Set Inference Sample & Residual Diagnostics (`terminal_predictions_eval.png`):**  
+   Displays actual vs. predicted output on the 440 unseen chronological test days (October 2024 to January 2026), residual error percentages, error coverage ($\pm 0.85\text{ GB}$), and the Durbin-Watson diagnostic statistic ($1.98$).  
+   ![Holdout Test Inference](../assets/screenshots/terminal_predictions_eval.png)
 
-3. **Behavioral Anomaly Detection (`anomaly_detection_runtime.png`):**
-   Dual-engine outlier detection (Isolation Forest with $\alpha=0.03$ and IQR $1.5\times$ threshold) highlighting sudden volume surges and diagnostic driver attribution.
-   ![Anomaly Detection](../assets/screenshots/anomaly_detection_runtime.png)
+3. **Multi-Horizon Recursive Forecasting Engine Schedule (`terminal_recursive_forecast.png`):**  
+   Shows runtime 7-day recursive time-series forecasting with empirical 90% prediction intervals, daily status, projected 7-day volume (137.10 GB), and quota compliance checks.  
+   ![Recursive Forecast Schedule](../assets/screenshots/terminal_recursive_forecast.png)
 
-4. **Model Performance & Benchmarking (`model_benchmarks_runtime.png`):**
-   Displays the model leaderboard (RMSE, MAE, $R^2$), benchmark horizontal comparisons, and tree-derived feature importance rankings.
-   ![Model Benchmarks](../assets/screenshots/model_benchmarks_runtime.png)
+4. **Dual-Engine Anomaly Detection & Diagnostic Timeline (`terminal_anomaly_detection.png`):**  
+   Displays non-parametric IQR ($>30.04\text{ GB}$) and unsupervised Isolation Forest ($\alpha=0.03$) detection logs, flagging consumption spikes with primary driver attribution.  
+   ![Anomaly Detection Output](../assets/screenshots/terminal_anomaly_detection.png)
 
-5. **Daily Usage Recording Form (`record_usage_runtime.png`):**
-   Allows manual logging of new day observations with active input validation, auto-calculating connected devices and displaying real-time device share distribution.
-   ![Record Usage Form](../assets/screenshots/record_usage_runtime.png)
+5. **Dataset Understanding, Feature Types & Summary Statistics (`terminal_data_summary.png`):**  
+   Shows dataset loading, 14 columns, non-null check across 2,200 records, memory footprint, and parametric descriptive statistics ($mean, std, min, 25\%, 50\%, 75\%, max$).  
+   ![Data Summary Terminal](../assets/screenshots/terminal_data_summary.png)
+
+6. **Automated Unit Test Suite Verification (`terminal_pytest_passed.png`):**  
+   Shows `pytest -v` executing across 7 test suites (data integrity, feature engineering, model training, recursive forecasting, prediction intervals, anomaly detection, SQLite persistence), confirming 7 passed test cases.  
+   ![Pytest Passed](../assets/screenshots/terminal_pytest_passed.png)
+
 
